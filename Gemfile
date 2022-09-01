@@ -3,29 +3,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
-
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
-
-gem 'pg', '~> 1.1'
-gem 'puma', '5.6.2'
-
-# gem "jbuilder"
-
-# gem "redis", "~> 4.0"
-
-# gem "kredis"
+ruby '3.1.0'
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'jwt'
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
 gem 'bootsnap', require: false
-
-# gem "image_processing", "~> 1.2"
-
-# gem "rack-cors"
+gem 'jwt'
+gem 'pg', '~> 1.1'
+gem 'puma', '5.6.2'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :test do
   gem 'database_cleaner'
@@ -33,6 +19,7 @@ group :test do
   gem 'mongoid-rspec'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop-rspec', require: false
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov', require: false
   gem 'test-prof', '~> 1.0'
 end
