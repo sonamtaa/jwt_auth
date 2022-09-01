@@ -9,13 +9,13 @@ describe 'Reset password' do
 
   let!(:params) do
     {
-      user: { email: 'ba+a@selise.ch' }
+      user: { email: 'st+a@gmail.com' }
     }
   end
 
   let!(:invalid_params) do
     {
-      user: { email: 'invalid-email@selise.ch' }
+      user: { email: 'invalid-email@gmail.com' }
     }
   end
 
@@ -49,21 +49,21 @@ describe 'Reset password' do
   end
 
   context 'with valid request' do
-    let!(:tenant_admin) { create(:user, :tenant_admin) }
-    let!(:admin_token) { user_token(tenant_admin) }
+    let!(:user2) { create(:user) }
+    let!(:admin_token) { user_token(user2) }
     let!(:params) do
       {
         user: {
-          current_password: 'Selise20',
-          password: 'Selise21',
-          password_confirmation: 'Selise21'
+          current_password: 'Testing20',
+          password: 'Testing22',
+          password_confirmation: 'Testing22'
         }
       }
     end
 
     it 'updates password for admin and then populate to other tenants' do
-      put update_password_api_v1_auth_user_path(tenant_admin), params: params,
-                                                               headers: header_params(token: admin_token)
+      put update_password_api_v1_auth_user_path(user2), params: params,
+                                                        headers: header_params(token: admin_token)
       expect(status).to eq(200)
     end
   end

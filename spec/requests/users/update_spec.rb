@@ -8,7 +8,7 @@ describe User, '#update' do
   let!(:account_update_params) do
     {
       user: {
-        email: 'st+e@selise.ch',
+        email: 'st+e@gmail.com',
         password: 'Testinf22',
         password_confirmation: 'Testinf22',
         current_password: 'Testinf20'
@@ -19,7 +19,7 @@ describe User, '#update' do
   let!(:invalid_account_params) do
     {
       user: {
-        email: 'st+e@selise.ch',
+        email: 'st+e@gmail.com',
         password: 'Testinf22',
         password_confirmation: 'Testinf22sss',
         current_password: 'Testinf20'

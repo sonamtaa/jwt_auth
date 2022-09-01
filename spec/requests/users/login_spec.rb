@@ -18,7 +18,7 @@ describe 'User login' do
 
   context 'with invalid email' do
     it 'throws invalid login error' do
-      post user_session_path, params: { user: { email: 'invalid-email@selise.ch', password: user.password } },
+      post user_session_path, params: { user: { email: 'invalid-email@gmail.com', password: user.password } },
                               headers: {}
       expect(status).to eq(401)
       expect(json[:error]).to eq('Invalid Email or password.')

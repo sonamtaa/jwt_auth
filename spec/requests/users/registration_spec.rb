@@ -6,7 +6,7 @@ describe 'User registration' do
   let!(:params) do
     {
       user: {
-        email: 'st+user@selise.ch',
+        email: 'st+user@gmail.com',
         role_id: Role.second.id,
         active: true,
         profile_attributes: {
@@ -45,23 +45,12 @@ describe 'User registration' do
     it 'registers the user' do
       post user_registration_path, params: params, headers: {}
       expect(status).to eq(200)
-      expect(json.dig(:user, :email)).to eq('st+user@selise.ch')
+      expect(json.dig(:user, :email)).to eq('st+user@gmail.com')
     end
   end
 
   context 'with auto approve' do
-    let!(:tenant) { Tenant.find_by(app_name: Apartment::Tenant.current) }
-    let!(:tenant_domain_list) { create(:tenant_domain_list) }
-    let!(:tenant_admin) { create(:user, :tenant_admin) }
-
-    before do
-      tenant_domain_list.update!(
-        tenant_id: tenant.id,
-        auto_approve: true,
-        email_domains: ['selise.ch'],
-        allow_email_domain: true
-      )
-    end
+    let!(:user) { create(:user) }
 
     it 'auto approves user when user registers' do
       post user_registration_path, params: params, headers: {}
@@ -69,8 +58,6 @@ describe 'User registration' do
       user = User.find(json.dig('user', 'id'))
       expect(user.status).to eq('approved')
       expect(user.active).to be(true)
-      expect(user.suspension).to be(false)
-      expect(user.portal_access).to be(true)
     end
   end
 
