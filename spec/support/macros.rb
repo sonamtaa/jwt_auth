@@ -6,7 +6,12 @@ def user_token(user)
 end
 
 def header_params(args = {})
-  { Authorization: args[:token], Accept: 'Application/json', HTTP_ACCEPT_LANGUAGE: args[:locale] || 'en' }
+  {
+    Authorization: args[:token],
+    Accept: 'Application/json',
+    HTTP_ACCEPT_LANGUAGE: args[:locale] || 'en',
+    HTTP_HOST: args[:http_host] || 'test.lvh.me:3000'
+  }
 end
 
 def json
