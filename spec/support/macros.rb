@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 def user_token(user)
-  post user_session_url, params: { user: { email: user.email, password: user.password } }
-  response.header['Authorization']
+  post '/auth/login', params: { user: { email: user.email, password: user.password } }
+  json['token']
 end
 
 def header_params(args = {})
