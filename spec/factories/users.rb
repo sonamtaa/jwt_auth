@@ -10,4 +10,10 @@ FactoryBot.define do
     # status { 'approved' }
     password { 'Selise20' }
   end
+
+  trait :employees do
+    email { 'employee@gamil.com' }
+    name { 'Employee Testing' }
+    username { 'employeetaa' }
+  end
 end
