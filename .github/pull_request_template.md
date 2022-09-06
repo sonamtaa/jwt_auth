@@ -1,4 +1,5 @@
-``` git
+To checkout the source do:
+```
 git fetch && git checkout branch_name
 ```
 
@@ -9,9 +10,13 @@ git fetch && git checkout branch_name
 -
 
 ## Checklist
- - [ ] Tested Locally
- - [ ] Tested Locally
- - [ ] Tested Locally
+- [ ] Tested Locally
+- [ ] Update API Documents
+- [ ] Update ChangeLogs
 
 ## Fixes
 -
+
+Coverage: Test coverage for the project/feature(percentage)
+
+MergeDate: When this PR can be merged
