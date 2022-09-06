@@ -4,18 +4,18 @@ git fetch && git checkout branch_name
 ```
 
 ## Changes
--
+  -
 
 ## Screenshots
--
+  -
 
 ## Checklist
-- [ ] Tested Locally
-- [ ] Update API Documents
-- [ ] Update ChangeLogs
+  - [ ] Tested Locally
+  - [ ] Update API Documents
+  - [ ] Update ChangeLogs
 
 ## Fixes
--
+  -
 
 Coverage: Test coverage for the project/feature(percentage)
 
