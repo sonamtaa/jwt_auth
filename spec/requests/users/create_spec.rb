@@ -29,14 +29,16 @@ describe User, '#create' do
 
   context 'with valid params' do
     it 'create the user account' do
-      post '/users#create', params: params
+      post users_path, params: params
       expect(status).to eq(201)
+      expect(json[:email]).to eq('st+e@gmail.com')
+      expect(json[:username]).to eq('sonamtaahee')
     end
   end
 
   context 'when password and password confirmation do not match' do
     it 'throws error' do
-      post '/users#create', params: invalid_params
+      post users_path, params: invalid_params
       expect(status).to eq(422)
       expect(json[:errors]).to eq(["Password confirmation doesn't match Password"])
     end

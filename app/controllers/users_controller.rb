@@ -5,8 +5,12 @@ class UsersController < ApplicationController
   before_action :find_user, except: %i[create index]
 
   def index
-    @users = User.all
-    render json: @users, status: :ok
+    render(
+      json: User.all,
+      each_serializer: UserSerializer,
+      root: 'users'
+    )
+    # render json: @users, UserSerializer, 'roles', status: :ok
   end
 
   def show
@@ -37,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by_username!(params[:username])
+    @user = User.find_by_id!(params[:id])
   rescue ActiveRecord::RecordNotFound
     render json: { errors: 'User not found' }, status: :not_found
   end

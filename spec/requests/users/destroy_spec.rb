@@ -9,7 +9,7 @@ describe User, '#destroy' do
 
   context 'when with valid id' do
     it 'destroy the user' do
-      delete user_path(user.username), params: {}, headers: header_params(token:)
+      delete user_path(user.id), params: {}, headers: header_params(token:)
       expect(response).to have_http_status(:no_content)
     end
   end
