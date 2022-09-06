@@ -13,6 +13,7 @@ git fetch && git checkout branch_name
   - [ ] Tested Locally
   - [ ] Update API Documents
   - [ ] Update ChangeLogs
+  - [ ] Run code Auditor locally
 
 ## Fixes
   -
