@@ -8,7 +8,7 @@ ruby '3.0.4'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
 gem 'pg', '~> 1.1'
-gem 'puma', '5.6.2'
+gem 'puma', '5.6.4'
 
 # gem "jbuilder"
 
