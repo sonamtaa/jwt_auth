@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 describe User, '#destroy' do
+  let!(:admin) { create(:role) }
+  let!(:role_employee) { create(:role, :employee) }
   let!(:user) { create(:user) }
   let!(:employee) { create(:user, :employees) }
   let!(:token) { user_token(user) }

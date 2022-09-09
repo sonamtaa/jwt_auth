@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 describe User, '#index' do
+  let!(:admin) { create(:role) }
+  let!(:role_employee) { create(:role, :employee) }
   let!(:user) { create(:user) }
   let!(:user1) { create(:user, :employees) }
   let!(:token) { user_token(user) }

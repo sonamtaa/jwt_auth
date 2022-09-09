@@ -3,11 +3,13 @@
 require 'rails_helper'
 
 describe 'User Registration' do
+  let!(:admin) { create(:role) }
   let!(:params) do
     {
       user: {
         name: 'Sonam tashi',
         username: 'sonataa',
+        role_id: admin.id,
         email: 'st+user@gmail.com',
         password: 'Test20',
         password_confirmation: 'Test20'
@@ -21,6 +23,7 @@ describe 'User Registration' do
         name: 'Sonam tashi',
         username: 'sonataa',
         password: 'Test20',
+        role_id: admin.id,
         password_confirmation: 'Test20',
         email: 'Testing'
       }

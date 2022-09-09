@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe 'User login' do
+  let!(:admin) { create(:role) }
   let!(:user) { create(:user) }
 
   context 'with valid email' do

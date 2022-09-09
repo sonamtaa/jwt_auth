@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'Reset password' do
   let!(:user) { create(:user) }
-  let!(:user1) { create(:employee) }
+  let!(:user1) { create(:user, :employee) }
   let!(:token) { user_token(user) }
 
   let!(:params) do

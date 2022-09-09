@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe 'User logout', type: :request do
+  let!(:admin) { create(:role) }
   let!(:user) { create(:user) }
   let!(:token) { user_token(user) }
 

@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe User, '#update' do
+  let!(:admin) { create(:role) }
   let!(:user) { create(:employee) }
   let!(:token) { user_token(user) }
   let!(:account_update_params) do
