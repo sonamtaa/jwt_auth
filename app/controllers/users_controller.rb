@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       each_serializer: UserSerializer,
       root: 'users'
     )
-    # render json: @users, UserSerializer, 'roles', status: :ok
   end
 
   def show
