@@ -3,38 +3,25 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.4'
+ruby '3.3.1'
 
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
-
-gem 'pg', '~> 1.1'
-gem 'puma', '5.6.4'
-
-# gem "jbuilder"
-
-# gem "redis", "~> 4.0"
-
-# gem "kredis"
-
-gem 'bcrypt', '~> 3.1.7'
-gem 'jwt'
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
+gem 'active_model_serializers'
+gem 'bcrypt'
 gem 'bootsnap', require: false
-
-# gem "image_processing", "~> 1.2"
-
-# gem "rack-cors"
-
+gem 'jwt'
+gem 'pg'
+gem 'puma'
+gem 'rails', '~> 7.1.3'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :test do
   gem 'database_cleaner'
   gem 'guard-rspec', require: false
   gem 'mongoid-rspec'
-  gem 'rspec-rails', '~> 5.0.0'
+  gem 'rspec-rails'
   gem 'rubocop-rspec', require: false
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false
-  gem 'test-prof', '~> 1.0'
+  gem 'test-prof'
 end
 
 group :development, :test do

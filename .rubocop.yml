@@ -1,0 +1,73 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - '**/*.json.jbuilder'
+    - '.git/**/*'
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+    - 'vendor/**/*'
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 3.3.1
+  NewCops: enable
+  SuggestExtensions: false
+RSpec/MultipleMemoizedHelpers:
+  Max: 20
+  Enabled: true
+RSpec/MultipleExpectations:
+  Enabled: false
+Metrics/AbcSize:
+  # default 15 is too strict but we can lower in the future
+  Max: 20
+  Enabled: true
+Metrics/ClassLength:
+  # default 100 is too strict but we can lower in the future
+  Max: 100
+  Enabled: true
+
+# Disagree with these for now
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context', 'class_methods', 'let!', 'it', 'namespace']
+  Enabled: true
+
+# Need to this(3 from here) later
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+# Seem broken?
+Style/Alias:
+  Enabled: false
+Style/DoubleNegation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Lint/AssignmentInCondition:
+  Enabled: false
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: true
+  Max: 20
+RSpec/LetSetup:
+  Enabled: false
