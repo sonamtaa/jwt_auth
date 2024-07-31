@@ -5,6 +5,7 @@ class JsonWebToken
 
   def self.encode(payload, exp = 24.hours.from_now)
     payload[:exp] = exp.to_i
+    payload[:jti] = SecureRandom.uuid
     JWT.encode(payload, SECRET_KEY)
   end
 

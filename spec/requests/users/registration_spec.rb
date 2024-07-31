@@ -32,7 +32,7 @@ describe 'User Registration' do
 
   context 'with valid params' do
     it 'registers the user' do
-      post users_path, params: params, headers: {}
+      post users_path, params:, headers: {}
       expect(status).to eq(201)
       expect(json[:email]).to eq('st+user@gmail.com')
     end

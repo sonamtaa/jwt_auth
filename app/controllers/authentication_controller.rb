@@ -15,6 +15,18 @@ class AuthenticationController < ApplicationController
     end
   end
 
+  def logout
+    header = request.headers['Authorization']
+    token = header.split.last if header
+    decoded = JsonWebToken.decode(token)
+    if decoded && !token_in_blacklist?(decoded[:jti])
+      JwtBlacklist.create(jti: decoded[:jti])
+      render json: { message: 'Logged out successfully.' }, status: :no_content
+    else
+      render json: { message: 'Invalid token' }, status: :unauthorized
+    end
+  end
+
   private
 
   def login_params

@@ -32,7 +32,7 @@ describe User, '#create' do
 
   context 'with valid params' do
     it 'create the user account' do
-      post users_path, params: params
+      post(users_path, params:)
       expect(status).to eq(201)
       expect(json[:email]).to eq('st+e@gmail.com')
       expect(json[:username]).to eq('sonamtaahee')
